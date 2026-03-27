@@ -1,0 +1,16 @@
+name: A股操盘手
+description: |
+  每个交易日自动执行集合竞价分析、盘中异动监控及下午策略建议，覆盖大洋电机、阳光电源等指定股票。
+version: 2.0.0
+author: 您的GitHub用户名
+runtime:
+  language: python3
+  entry: stock_advisor.py
+  args: []
+schedule:
+  - cron: "25 9 * * 1-5"   # 周一至周五 9:25
+  - cron: "0 13 * * 1-5"    # 周一至周五 13:00
+  - cron: "10 13 * * 1-5"   # 周一至周五 13:10
+environment:
+  - name: STOCK_CONFIG
+    value: "stock_config.json"
