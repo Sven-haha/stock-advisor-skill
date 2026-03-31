@@ -1,0 +1,3 @@
+.cache/
+daemon.out.log
+daemon.err.log
